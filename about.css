@@ -1,0 +1,460 @@
+/* About Page - Mobile First Design */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --accent-color: #3498db;
+    --light-bg: #f8f9fa;
+    --dark-bg: #1a2a3a;
+    --text-color: #333;
+    --light-text: #fff;
+}
+
+/* Base Styles */
+.about-page {
+    padding-top: 70px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Hero Section */
+.about-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/about-hero.jpg') center/cover no-repeat;
+    color: var(--light-text);
+    padding: 4rem 1rem;
+    text-align: center;
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 3rem 1rem;
+    background: var(--light-bg);
+}
+
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mission-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.mission-statement {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.mission-values {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.value-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Story Section */
+.story-section {
+    padding: 3rem 1rem;
+    background: white;
+}
+
+.story-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.story-timeline h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 5rem;
+}
+
+.timeline-year {
+    position: absolute;
+    left: 0;
+    width: 4rem;
+    height: 4rem;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.timeline-content {
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 0.5rem;
+    position: relative;
+    flex: 1;
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Team Section */
+.team-section {
+    padding: 3rem 1rem;
+    background: var(--light-bg);
+}
+
+.team-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.member-photo {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.member-info {
+    padding: 1.5rem;
+}
+
+.member-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
+}
+
+.position {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.bio {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.member-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.member-social a {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.member-social a:hover {
+    color: var(--secondary-color);
+}
+
+/* Certifications Section */
+.certifications-section {
+    padding: 3rem 1rem;
+    background: white;
+}
+
+.certifications-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.certification {
+    text-align: center;
+}
+
+.certification img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+/* Clients Section */
+.clients-section {
+    padding: 3rem 1rem;
+    background: var(--light-bg);
+}
+
+.clients-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.client-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.client-logos img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.client-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* CTA Section */
+.about-cta {
+    padding: 3rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.about-cta h2 {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cta-btn i {
+    margin-right: 0.5rem;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .mission-values {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .certifications-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+        max-width: none;
+        justify-content: center;
+    }
+    
+    .cta-btn {
+        padding: 1rem 2rem;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .about-hero {
+        min-height: 70vh;
+    }
+    
+    .about-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 2rem;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--secondary-color);
+    }
+    
+    .timeline-item:last-child::before {
+        display: none;
+    }
+    
+    .timeline-content::before {
+        content: '';
+        position: absolute;
+        left: -1rem;
+        top: 1.5rem;
+        width: 0;
+        height: 0;
+        border-top: 0.8rem solid transparent;
+        border-bottom: 0.8rem solid transparent;
+        border-right: 1rem solid var(--light-bg);
+    }
+}

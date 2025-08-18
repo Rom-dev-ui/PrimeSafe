@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | PrimeSafe Inspections Ltd</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254797310633?text=Hello%20PrimeSafe,%20I%20have%20a%20question." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.png" alt="PrimeSafe Logo" width="120"></a>
+            </div>
+            <div class="header-contact">
+                <a href="tel:+254797310633" class="phone-link">
+                    <i class="fas fa-phone"></i> 0797310633<span class="call-text">Call</span>
+                </a>
+                <button class="menu-toggle" aria-label="Menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="services.html"><i class="fas fa-clipboard-check"></i> Services</a></li>
+                <li><a href="about.html"><i class="fas fa-building"></i> About Us</a></li>
+                <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="quote.html" class="quote-nav">Free Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <!-- Contact Hero -->
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Get in Touch</h1>
+                <p class="subtitle">Our team is ready to assist with your safety inspection needs</p>
+                <div class="contact-badges">
+                    <div class="badge">
+                        <i class="fas fa-clock"></i>
+                        <span>24h response time</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Expert support</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Grid -->
+        <section class="contact-grid">
+            <div class="container">
+                <div class="grid-container">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                           <form id="quoteForm" onsubmit="sendToWhatsApp(event)"class="quote-form">
+                            <div class="form-group">
+                                <label for="contact-name">Full Name*</label>
+                                <input type="text" id="contact-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email*</label>
+                                <input type="email" id="contact-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone">Phone</label>
+                                <input type="tel" id="contact-phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-service">Service Interest</label>
+                                <select id="contact-service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="safety-audits">Safety Audits</option>
+                                    <option value="equipment-inspection">Equipment Inspection</option>
+                                    <option value="ndt">Non-Destructive Testing</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Message*</label>
+                                <textarea id="contact-message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group consent-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="consent" required>
+                                    <span class="checkmark"></span>
+                                    I consent to PrimeSafe contacting me about this inquiry*
+                                </label>
+                            </div>
+                               <button type="submit" class="btn submit-btn">Send via WhatsApp</button>
+                        </form>
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault();
+    
+    // Get form elements
+    const form = event.target;
+    const submitBtn = form.querySelector('.submit-btn');
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Preparing Message...';
+    
+    // Get form values
+    const formData = {
+        name: document.getElementById('contact-name').value,
+        email: document.getElementById('contact-email').value,
+        phone: document.getElementById('contact-phone').value,
+        service: document.getElementById('contact-service').value,
+        message: document.getElementById('contact-message').value
+    };
+    
+    // Create WhatsApp message
+    const whatsappMessage = `*New Contact Inquiry from PrimeSafe Website*%0A%0A` +
+        `*Name:* ${formData.name}%0A` +
+        `*Email:* ${formData.email}%0A` +
+        `*Phone:* ${formData.phone || 'Not provided'}%0A` +
+        `*Service Interest:* ${formData.service || 'Not specified'}%0A%0A` +
+        `*Message:*%0A${formData.message}%0A%0A` +
+        `_This message was sent from the PrimeSafe website contact form._`;
+    
+    // Replace with your WhatsApp business number (with country code, remove + and spaces)
+    const whatsappNumber = '254797310633'; // Kenyan format example
+    
+    // Create WhatsApp link
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    
+    // Open WhatsApp
+    window.open(whatsappLink, '_blank');
+    
+    // Reset form and button state after delay
+    setTimeout(() => {
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Message Sent!';
+        
+        // Revert button text after 3 seconds
+        setTimeout(() => {
+            submitBtn.textContent = 'Send via WhatsApp';
+        }, 3000);
+    }, 1000);
+}
+</script>
+                        <div class="form-success" style="display: none;">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Message Sent Successfully!</h3>
+                            <p>Thank you for contacting us. Our team will respond within 24 hours.</p>
+                            <p>For urgent matters, please call <a href="tel:+254797310633">+254 797 310 633</a></p>
+                        </div>
+                    </div>
+                   
+
+                    <!-- Contact Info -->
+                    <div class="contact-info-container">
+                        <div class="contact-info-card">
+                            <h2>Contact Information</h2>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Headquarters</h3>
+                                    <p>Nairobi, Kenya</p>
+                                    <a href="https://maps.google.com" target="_blank" class="map-link">View on Map →</a>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Phone</h3>
+                                    <p><a href="tel:+254797310633">+254 254797310633</a></p>
+                                    <p><a href="tel:+254797310633">+254 797 310 633</a> (Emergency)</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:romanngatia50@gmail.com">romanngatia50@gmail.com</a></p>
+                                    <p><a href="mailto:support@primesafe.co.ke">support@primesafe.co.ke</a></p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Business Hours</h3>
+                                    <p>Mon-Fri: 8:00 AM - 5:00 PM</p>
+                                    <p>Sat: 9:00 AM - 1:00 PM</p>
+                                    <p>Sun: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="emergency-card">
+                            <div class="emergency-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>Emergency Contact</h3>
+                            <p>For urgent safety concerns requiring immediate attention</p>
+                            <a href="tel:+254797310633" class="emergency-btn">
+                                <i class="fas fa-phone"></i> Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <h2>Our Location</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.808559339575!2d36.8215483147539!3d-1.292359835979768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d664f5b7c9%3A0x1d3a0e6e5b5f5b1e!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1620000000000!5m2!1sen!2ske" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team CTA -->
+        <section class="team-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Meet Our Safety Experts</h2>
+                    <p>Our certified inspectors are ready to assist with your specific requirements</p>
+                    <div class="cta-buttons">
+                        <a href="tel:+254797310633" class="cta-btn">
+                            <i class="fas fa-phone"></i> Call Our Team
+                        </a>
+                        <a href="quote.html" class="cta-btn secondary">
+                            <i class="fas fa-file-alt"></i> Request Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-brand">
+                    <h3>PrimeSafe Inspections Ltd</h3>
+                    <p>Quality assurance and safety compliance experts since 2002</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="safety-audits.html">Safety Audits</a></li>
+                    <li><a href="equipment-inspection.html">Equipment Inspections</a></li>
+                    <li><a href="ndt.html">Non-Destructive Testing</a></li>
+                    <li><a href="#services">Environmental Assessments</a></li>
+                    <li><a href="#services">Safety Training</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="quote.html">Free Quote</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nairobi, Kenya</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@primesafe.co.ke</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+254 254797310633</span>
+                    </li>
+                </ul>
+                
+                <div class="footer-hours">
+                    <h4>Business Hours</h4>
+                    <p>Mon-Fri: 8am - 5pm</p>
+                    <p>Sat: 9am - 1pm</p>
+                    <p>Sun: Closed</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> PrimeSafe Inspections Ltd. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

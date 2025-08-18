@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Free Quote | PrimeSafe Inspections Ltd</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quote.css">
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254797310633?text=Hello%20PrimeSafe,%20I%20need%20a%20quote." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.png" alt="PrimeSafe Logo" width="120"></a>
+            </div>
+            <div class="header-contact">
+                <a href="tel:+254719879928" class="phone-link">
+                    <i class="fas fa-phone"></i> 0797310633<span class="call-text">Call</span>
+                </a>
+                <button class="menu-toggle" aria-label="Menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="services.html"><i class="fas fa-clipboard-check"></i> Services</a></li>
+                <li><a href="about.html"><i class="fas fa-building"></i> About Us</a></li>
+                <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="quote.html" class="quote-nav">Free Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="quote-page">
+        <!-- Quote Hero -->
+        <section class="quote-hero">
+            <div class="container">
+                <h1>Get Your Free Quote</h1>
+                <p class="subtitle">Complete this form and we'll provide a customized proposal within 24 hours</p>
+                <div class="trust-badges">
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>No obligation</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure form</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-headset"></i>
+                        <span>Expert support</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Process Steps -->
+        <section class="process-steps">
+            <div class="container">
+                <h2 class="section-title">Simple 3-Step Process</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Submit Request</h3>
+                        <p>Fill out our simple form with your requirements</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Expert Review</h3>
+                        <p>Our specialists analyze your needs</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Receive Quote</h3>
+                        <p>Get a detailed proposal via email</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quote Form -->
+<section class="quote-form-section">
+    <form id="quoteForm" onsubmit="sendToWhatsApp(event)">
+        <!-- Progress Bar -->
+        <div class="form-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 33%"></div>
+            </div>
+            <span class="progress-text">Step 1 of 3</span>
+        </div>
+
+        <!-- Form Steps -->
+        <div class="form-step active" data-step="1">
+            <h2>Contact Information</h2>
+            <div class="form-group">
+                <label for="name">Full Name*</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address*</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number*</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn next-btn">Next: Service Selection →</button>
+            </div>
+        </div>
+
+        <div class="form-step" data-step="2">
+            <h2>Service Requirements</h2>
+            <div class="form-group">
+                <label>Services Needed*</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="services" value="Safety Audits">
+                        <span class="checkmark"></span> Safety Audits
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="services" value="Equipment Inspections">
+                        <span class="checkmark"></span> Equipment Inspections
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="services" value="Non-Destructive Testing">
+                        <span class="checkmark"></span> Non-Destructive Testing
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="services" value="Other">
+                        <span class="checkmark"></span> Other (specify below)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="otherServices">Other Services</label>
+                <textarea id="otherServices" name="otherServices" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="urgency">Urgency*</label>
+                <select id="urgency" name="urgency" required>
+                    <option value="">Select urgency level</option>
+                    <option value="urgent">Urgent (within 48 hours)</option>
+                    <option value="standard">Standard (1-2 weeks)</option>
+                    <option value="planning">Planning (future date)</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn prev-btn">← Back</button>
+                <button type="button" class="btn next-btn">Next: Final Details →</button>
+            </div>
+        </div>
+
+        <div class="form-step" data-step="3">
+            <h2>Final Details</h2>
+            <div class="form-group">
+                <label for="location">Project Location*</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="form-group">
+                <label for="details">Additional Details</label>
+                <textarea id="details" name="details" rows="4" placeholder="Describe your specific requirements, equipment details, or any special considerations..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="reference">How did you hear about us?</label>
+                <select id="reference" name="reference">
+                    <option value="">Select option</option>
+                    <option value="search">Search Engine</option>
+                    <option value="social">Social Media</option>
+                    <option value="referral">Referral</option>
+                    <option value="repeat">Repeat Customer</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group consent-group">
+                <label class="checkbox-container">
+                    <input type="checkbox" name="consent" required>
+                    <span class="checkmark"></span> I consent to PrimeSafe contacting me about this inquiry*
+                </label>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn prev-btn">← Back</button>
+                <button type="submit" class="btn submit-btn">Send via WhatsApp</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault();
+    
+    // Validate form first
+    if (!validateForm()) return;
+    
+    // Get form values
+    const formData = {
+        name: document.getElementById('name').value,
+        company: document.getElementById('company').value || 'N/A',
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        services: Array.from(document.querySelectorAll('input[name="services"]:checked'))
+                   .map(cb => cb.value).join(', '),
+        otherServices: document.getElementById('otherServices').value,
+        urgency: document.getElementById('urgency').value,
+        location: document.getElementById('location').value,
+        details: document.getElementById('details').value || 'None provided',
+        reference: document.getElementById('reference').value || 'Not specified'
+    };
+
+    // Compose the WhatsApp message
+    const message = `*NEW QUOTE REQUEST*%0A%0A` +
+                   `*Contact Information*%0A` +
+                   `Name: ${encodeURIComponent(formData.name)}%0A` +
+                   `Company: ${encodeURIComponent(formData.company)}%0A` +
+                   `Phone: ${encodeURIComponent(formData.phone)}%0A` +
+                   `Email: ${encodeURIComponent(formData.email)}%0A%0A` +
+                   `*Service Requirements*%0A` +
+                   `Services Needed: ${encodeURIComponent(
+                       formData.otherServices ? 
+                       `${formData.services}, ${formData.otherServices}` : 
+                       formData.services
+                   )}%0A` +
+                   `Urgency: ${encodeURIComponent(formData.urgency)}%0A` +
+                   `Location: ${encodeURIComponent(formData.location)}%0A%0A` +
+                   `*Additional Information*%0A` +
+                   `Details: ${encodeURIComponent(formData.details)}%0A` +
+                   `How they heard about us: ${encodeURIComponent(formData.reference)}`;
+
+    // Format phone number (remove all non-numeric characters)
+    const phoneNumber = '254797310633'.replace(/\D/g, '');
+    
+    // Create WhatsApp link
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Open in new tab with fallback
+    const newWindow = window.open(whatsappUrl, '_blank');
+    
+    // Fallback if popup blocked
+    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+        alert('Please allow popups to continue to WhatsApp. Or send this message manually:\n\n' + 
+              decodeURIComponent(message).replace(/%0A/g, '\n'));
+    }
+}
+
+function validateForm() {
+    // Required fields validation
+    const requiredFields = ['name', 'email', 'phone', 'urgency', 'location'];
+    let isValid = true;
+    
+    requiredFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (!field.value.trim()) {
+            field.style.borderColor = '#e74c3c';
+            isValid = false;
+        }
+    });
+    
+    // Validate at least one service is checked
+    const servicesChecked = document.querySelectorAll('input[name="services"]:checked').length > 0;
+    if (!servicesChecked) {
+        alert('Please select at least one service');
+        isValid = false;
+    }
+    
+    // Validate consent checkbox
+    if (!document.querySelector('input[name="consent"]').checked) {
+        alert('You must consent to being contacted');
+        isValid = false;
+    }
+    
+    return isValid;
+}
+</script>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="form-success" style="display: none;">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>Request Submitted Successfully!</h2>
+                        <p>Thank you for your inquiry. Our team will review your request and respond within 24 hours.</p>
+                        <p>For urgent matters, please call us at <a href="tel:+254797310633">+254 797 310 633</a></p>
+                        <a href="index.html" class="btn home-btn">Back to Home</a>
+                    </div>
+                </form>
+
+                <!-- Sidebar Benefits -->
+                <div class="form-sidebar">
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-star"></i> Why Choose PrimeSafe?</h3>
+                        <ul>
+                            <li>20+ Years Industry Experience</li>
+                            <li>Certified Inspectors</li>
+                            <li>Competitive Pricing</li>
+                            <li>Nationwide Coverage</li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-headset"></i> Need Help?</h3>
+                        <p>Our team is ready to assist you:</p>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+254797310633">+254 797 310 633</a>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:quotes@primesafe.co.ke">quotes@primesafe.co.ke</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="quote-testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <div class="testimonial-carousel">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"PrimeSafe provided the most detailed and competitive quote we received. Their inspection team was professional and thorough."</p>
+                            <div class="client-info">
+                                <div class="client-name">James Mwangi</div>
+                                <div class="client-company">Nairobi Manufacturing Co.</div>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional testimonials -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="quote-faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How quickly will I receive my quote?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We typically respond within 24 hours for standard requests. Urgent requests can often be processed within 4-6 hours during business days.</p>
+                        </div>
+                    </div>
+                    <!-- Additional FAQ items -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-brand">
+                    <h3>PrimeSafe Inspections Ltd</h3>
+                    <p>Quality assurance and safety compliance experts since 2002</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="safety-audit.html">Safety Audits</a></li>
+                    <li><a href="equipment-inspection.html">Equipment Inspections</a></li>
+                    <li><a href="ndt.html">Non-Destructive Testing</a></li>
+                    <li><a href="#services">Environmental Assessments</a></li>
+                    <li><a href="#services">Safety Training</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="quote.html">Free Quote</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nairobi, Kenya</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@primesafe.co.ke</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+254 797310633</span>
+                    </li>
+                </ul>
+                
+                <div class="footer-hours">
+                    <h4>Business Hours</h4>
+                    <p>Mon-Fri: 8am - 5pm</p>
+                    <p>Sat: 9am - 1pm</p>
+                    <p>Sun: Closed</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> PrimeSafe Inspections Ltd. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="quote.js"></script>
+</body>
+</html>

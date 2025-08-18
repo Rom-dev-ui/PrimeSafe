@@ -1,0 +1,333 @@
+/* Training Page - Mobile First Design */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --accent-color: #3498db;
+    --light-bg: #f8f9fa;
+    --text-color: #333;
+    --light-text: #fff;
+    --border-color: #e0e0e0;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Base Styles */
+.training-page {
+    padding-top: 70px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Hero Section */
+.training-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/training-hero.jpg') center/cover no-repeat;
+    color: var(--light-text);
+    padding: 4rem 1rem;
+    text-align: center;
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.training-hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.training-hero .subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+/* Training Content */
+.training-intro {
+    text-align: center;
+    margin: 3rem auto;
+    max-width: 800px;
+}
+
+.training-intro h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.training-intro h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 1rem auto 0;
+}
+
+/* Training Grid */
+.training-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.training-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.training-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-header i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.card-header h3 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.training-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.training-features li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem;
+    position: relative;
+}
+
+.training-features i {
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+}
+
+.training-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.training-footer i {
+    margin-right: 0.3rem;
+}
+
+.card-btn {
+    display: block;
+    text-align: center;
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.card-btn:hover {
+    background: #c0392b;
+}
+
+/* Training Benefits */
+.training-benefits {
+    margin: 4rem 0;
+}
+
+.training-benefits h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.benefit-card {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.benefit-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+}
+
+/* CTA Section */
+.training-cta {
+    background: var(--primary-color);
+    color: white;
+    padding: 3rem 1.5rem;
+    border-radius: 0.5rem;
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.training-cta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.training-cta p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.secondary-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-15px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-7px) translateX(-50%);
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .training-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .training-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+        max-width: none;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .training-hero {
+        min-height: 60vh;
+    }
+    
+    .training-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .training-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .training-intro h2 {
+        font-size: 2.2rem;
+    }
+}
